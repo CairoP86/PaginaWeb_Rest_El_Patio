@@ -11,7 +11,7 @@
     return "₡" + n.toLocaleString("es-CR");
   }
 
-  function tagEmoji() {
+  function tagEmoji(tags) {
     return "";
   }
 
@@ -492,81 +492,92 @@
     var trans = window.TRANSLATIONS[lang];
     if (!trans) return;
 
-    // Update nav
-    document.getElementById('nav-inicio').textContent = trans.nav.inicio;
-    document.getElementById('nav-servicios').textContent = trans.nav.servicios;
-    document.getElementById('nav-menu').textContent = trans.nav.menu;
-    document.getElementById('nav-galeria').textContent = trans.nav.galeria;
-    document.getElementById('nav-reservas').textContent = trans.nav.reservas;
-    document.getElementById('nav-pedido').textContent = trans.nav.pedido;
-    document.getElementById('nav-contacto').textContent = trans.nav.contacto;
+    // Helper function to safely update elements
+    function setText(id, value) {
+      var el = document.getElementById(id);
+      if (el) el.textContent = value;
+    }
+    function setHTML(id, value) {
+      var el = document.getElementById(id);
+      if (el) el.innerHTML = value;
+    }
 
-    // Update hero
-    document.getElementById('hero-title').textContent = trans.hero.title;
-    document.getElementById('hero-lead').textContent = trans.hero.lead;
-    document.getElementById('hero-btn-reservar').textContent = trans.hero.btnReservar;
-    document.getElementById('hero-btn-menu').textContent = trans.hero.btnMenu;
+    // Update nav (exists on all pages)
+    setText('nav-inicio', trans.nav.inicio);
+    setText('nav-servicios', trans.nav.servicios);
+    setText('nav-menu', trans.nav.menu);
+    setText('nav-galeria', trans.nav.galeria);
+    setText('nav-reservas', trans.nav.reservas);
+    setText('nav-pedido', trans.nav.pedido);
+    setText('nav-contacto', trans.nav.contacto);
 
-    // Update servicios
-    document.getElementById('servicios-title').textContent = trans.servicios.title;
-    document.getElementById('servicios-subtitle').textContent = trans.servicios.subtitle;
-    document.getElementById('servicios-feature1').textContent = trans.servicios.feature1;
-    document.getElementById('servicios-desc1').textContent = trans.servicios.desc1;
-    document.getElementById('servicios-feature2').textContent = trans.servicios.feature2;
-    document.getElementById('servicios-desc2').textContent = trans.servicios.desc2;
-    document.getElementById('servicios-feature3').textContent = trans.servicios.feature3;
-    document.getElementById('servicios-desc3').textContent = trans.servicios.desc3;
+    // Update hero (index only)
+    setText('hero-title', trans.hero.title);
+    setText('hero-lead', trans.hero.lead);
+    setText('hero-btn-reservar', trans.hero.btnReservar);
+    setText('hero-btn-menu', trans.hero.btnMenu);
 
-    // Update nosotros
-    document.getElementById('nosotros-title').textContent = trans.nosotros.title;
-    document.getElementById('nosotros-desc').innerHTML = trans.nosotros.desc;
-    document.getElementById('nosotros-precio').innerHTML = trans.nosotros.precio;
-    document.getElementById('nosotros-btn-menu').textContent = trans.nosotros.btnMenu;
+    // Update servicios (index only)
+    setText('servicios-title', trans.servicios.title);
+    setText('servicios-subtitle', trans.servicios.subtitle);
+    setText('servicios-feature1', trans.servicios.feature1);
+    setText('servicios-desc1', trans.servicios.desc1);
+    setText('servicios-feature2', trans.servicios.feature2);
+    setText('servicios-desc2', trans.servicios.desc2);
+    setText('servicios-feature3', trans.servicios.feature3);
+    setText('servicios-desc3', trans.servicios.desc3);
 
-    // Update menu
-    document.getElementById('menu-title').textContent = trans.menu.title;
-    document.getElementById('menu-note').innerHTML = trans.menu.note;
+    // Update nosotros (index only)
+    setText('nosotros-title', trans.nosotros.title);
+    setHTML('nosotros-desc', trans.nosotros.desc);
+    setHTML('nosotros-precio', trans.nosotros.precio);
+    setText('nosotros-btn-menu', trans.nosotros.btnMenu);
 
-    // Update galeria
-    document.getElementById('galeria-title').textContent = trans.galeria.title;
-    document.getElementById('galeria-desc').textContent = trans.galeria.desc;
+    // Update menu (menu.html)
+    setText('menu-title', trans.menu.title);
+    setHTML('menu-note', trans.menu.note);
 
-    // Update reservas
-    document.getElementById('reservas-title').textContent = trans.reservas.title;
-    document.getElementById('reservas-desc').innerHTML = trans.reservas.desc;
-    document.getElementById('reservas-form-title').textContent = trans.reservas.formTitle;
-    document.getElementById('reservas-nombre').textContent = trans.reservas.nombre;
-    document.getElementById('reservas-telefono').textContent = trans.reservas.telefono;
-    document.getElementById('reservas-fecha').textContent = trans.reservas.fecha;
-    document.getElementById('reservas-hora').textContent = trans.reservas.hora;
-    document.getElementById('reservas-personas').textContent = trans.reservas.personas;
-    document.getElementById('reservas-notas').textContent = trans.reservas.notas;
-    document.getElementById('notas').placeholder = trans.reservas.placeholderNotas;
-    document.getElementById('reservas-btn-enviar').textContent = trans.reservas.btnEnviar;
+    // Update galeria (galeria.html)
+    setText('galeria-title', trans.galeria.title);
+    setText('galeria-desc', trans.galeria.desc);
 
-    // Update pedido
-    document.getElementById('pedido-title').textContent = trans.pedido.title;
-    document.getElementById('pedido-desc').innerHTML = trans.pedido.desc;
-    document.getElementById('pedido-how-title').textContent = trans.pedido.howTitle;
-    document.getElementById('pedido-step1').textContent = trans.pedido.step1;
-    document.getElementById('pedido-step2').textContent = trans.pedido.step2;
-    document.getElementById('pedido-step3').textContent = trans.pedido.step3;
-    document.getElementById('pedido-note').textContent = trans.pedido.note;
+    // Update reservas (reservas.html)
+    setText('reservas-title', trans.reservas.title);
+    setHTML('reservas-desc', trans.reservas.desc);
+    setText('reservas-form-title', trans.reservas.formTitle);
+    setText('reservas-nombre', trans.reservas.nombre);
+    setText('reservas-telefono', trans.reservas.telefono);
+    setText('reservas-fecha', trans.reservas.fecha);
+    setText('reservas-hora', trans.reservas.hora);
+    setText('reservas-personas', trans.reservas.personas);
+    setText('reservas-notas', trans.reservas.notas);
+    var notasEl = document.getElementById('notas');
+    if (notasEl) notasEl.placeholder = trans.reservas.placeholderNotas;
+    setText('reservas-btn-enviar', trans.reservas.btnEnviar);
 
-    // Update contacto
-    document.getElementById('contacto-title').textContent = trans.contacto.title;
-    document.getElementById('contacto-direccion').innerHTML = trans.contacto.direccion;
-    document.getElementById('contacto-telefono').innerHTML = trans.contacto.telefono;
-    document.getElementById('contacto-horario').innerHTML = trans.contacto.horario;
-    document.getElementById('contacto-btn-maps').textContent = trans.contacto.btnMaps;
+    // Update pedido (menu.html)
+    setText('pedido-title', trans.pedido.title);
+    setHTML('pedido-desc', trans.pedido.desc);
+    setText('pedido-how-title', trans.pedido.howTitle);
+    setText('pedido-step1', trans.pedido.step1);
+    setText('pedido-step2', trans.pedido.step2);
+    setText('pedido-step3', trans.pedido.step3);
+    setText('pedido-note', trans.pedido.note);
 
-    // Update footer
-    document.getElementById('footer-title').textContent = trans.footer.title;
-    document.getElementById('footer-info').innerHTML = trans.footer.info;
-    document.getElementById('footer-note').textContent = trans.footer.note;
-    document.getElementById('footer-redes').textContent = trans.footer.redes;
-    document.getElementById('footer-enlaces').textContent = trans.footer.enlaces;
-    document.getElementById('footer-copyright').innerHTML = trans.footer.copyright;
+    // Update contacto (contacto.html)
+    setText('contacto-title', trans.contacto.title);
+    setHTML('contacto-direccion', trans.contacto.direccion);
+    setHTML('contacto-telefono', trans.contacto.telefono);
+    setHTML('contacto-horario', trans.contacto.horario);
+    setText('contacto-btn-maps', trans.contacto.btnMaps);
+
+    // Update footer (exists on all pages)
+    setText('footer-title', trans.footer.title);
+    setHTML('footer-info', trans.footer.info);
+    setText('footer-note', trans.footer.note);
+    setText('footer-redes', trans.footer.redes);
+    setText('footer-enlaces', trans.footer.enlaces);
+    setHTML('footer-copyright', trans.footer.copyright);
 
     // Update menu-filter and add-to-cart labels
     var allFilter = document.querySelector('.filter-btn[data-filter="all"]');
@@ -575,21 +586,26 @@
       btn.textContent = trans.menu.addToCart;
     });
 
-    // Update cart
-    document.getElementById('cart-title').textContent = trans.cart.title;
-    document.getElementById('cart-total-text').textContent = trans.cart.total;
+    // Update cart (exists on all pages)
+    setText('cart-title', trans.cart.title);
+    setText('cart-total-text', trans.cart.total);
     var whatsappOrderBtn = document.getElementById('whatsapp-order');
     if (whatsappOrderBtn) whatsappOrderBtn.textContent = trans.cart.btnEnviar;
-    document.getElementById('cart-btn-cerrar').textContent = trans.cart.btnCerrar;
+    setText('cart-btn-cerrar', trans.cart.btnCerrar);
 
-    // Update skip link
-    document.querySelector('.skip-link').textContent = trans.skipLink;
+    // Update skip link (exists on all pages)
+    var skipEl = document.querySelector('.skip-link');
+    if (skipEl) skipEl.textContent = trans.skipLink;
 
-    // Update lang buttons
-    document.getElementById('lang-es').classList.toggle('active', lang === 'es');
-    document.getElementById('lang-en').classList.toggle('active', lang === 'en');
-    document.getElementById('lang-es-mobile').classList.toggle('active', lang === 'es');
-    document.getElementById('lang-en-mobile').classList.toggle('active', lang === 'en');
+    // Update lang buttons (exists on all pages)
+    var esBtn = document.getElementById('lang-es');
+    var enBtn = document.getElementById('lang-en');
+    var esMobileBtn = document.getElementById('lang-es-mobile');
+    var enMobileBtn = document.getElementById('lang-en-mobile');
+    if (esBtn) esBtn.classList.toggle('active', lang === 'es');
+    if (enBtn) enBtn.classList.toggle('active', lang === 'en');
+    if (esMobileBtn) esMobileBtn.classList.toggle('active', lang === 'es');
+    if (enMobileBtn) enMobileBtn.classList.toggle('active', lang === 'en');
 
     // Update document lang
     document.documentElement.lang = lang;
@@ -601,7 +617,10 @@
     renderMenu(currentFilter === 'all' ? null : currentFilter);
   }
 
-  document.addEventListener("DOMContentLoaded", function () {    initNav();
+  document.addEventListener("DOMContentLoaded", function () {
+    console.log("✅ DOMContentLoaded fired, MENU_DATA:", window.MENU_DATA);
+    console.log("✅ menu-root exists:", document.getElementById("menu-root"));
+    initNav();
     initLightbox();
     initLanguage();
     initFilters();
@@ -617,7 +636,7 @@
         if (e.target === modal) closeCart();
       });
     }
-    var closeBtn = document.getElementById("cart-close");
+    var closeBtn = document.getElementById("cart-btn-cerrar");
     if (closeBtn) closeBtn.addEventListener("click", closeCart);
 
     var waBtn = document.getElementById("whatsapp-order");

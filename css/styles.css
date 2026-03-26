@@ -761,54 +761,75 @@ textarea {
   transition: var(--transition);
 }
 
-.footer {
-  background: var(--blue-muted);
+.site-footer {
+  background: linear-gradient(135deg, #1e3a5f 0%, #1a2a48 100%);
   color: var(--white);
-  padding: 3rem 1.25rem 2rem;
-  border-top: none;
+  padding: 4rem 1.25rem 2rem;
+  border-top: 3px solid #2563eb;
+  margin-top: auto;
 }
 
-.footer a {
+.site-footer a {
   color: rgba(255, 255, 255, 0.9);
   transition: var(--transition);
+  text-decoration: none;
 }
 
-.footer a:hover {
-  color: var(--accent-light);
+.site-footer a:hover {
+  color: #60a5fa;
   text-decoration: underline;
 }
 
-.footer-grid {
+.site-footer .container {
   max-width: 1120px;
   margin: 0 auto;
+}
+
+.site-footer .footer-content {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 3rem;
   margin-bottom: 2rem;
 }
 
-.footer h3 {
-  font-family: var(--font-display);
-  font-size: 1.15rem;
-  margin: 0 0 1.25rem;
-  font-weight: 700;
+.site-footer .footer-content > div {
+  display: flex;
+  flex-direction: column;
 }
 
-.footer p,
-.footer li {
+.site-footer strong {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  margin: 0 0 1rem;
+  font-weight: 700;
+  color: #60a5fa;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.site-footer p {
   font-size: 0.95rem;
   opacity: 0.95;
-  line-height: 1.7;
+  line-height: 1.8;
+  margin: 0 0 0.5rem;
 }
 
-.footer ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.site-footer p:last-child {
+  margin-bottom: 0;
 }
 
-.footer li {
-  margin-bottom: 0.75rem;
+.site-footer br {
+  content: '';
+}
+
+.footer-bottom {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.9rem;
+  opacity: 0.85;
+  text-align: center;
 }
 
 .social-links {
@@ -821,27 +842,19 @@ textarea {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  padding: 0.4rem 0.75rem;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  background: rgba(96, 165, 250, 0.15);
+  border-radius: 6px;
   text-decoration: none;
   transition: var(--transition);
+  border: 1px solid rgba(96, 165, 250, 0.3);
 }
 
 .social-links a:hover {
-  background: rgba(255, 255, 255, 0.18);
+  background: rgba(96, 165, 250, 0.25);
   transform: translateY(-2px);
+  border-color: rgba(96, 165, 250, 0.6);
   text-decoration: none;
-}
-
-.footer-bottom {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding-top: 1.75rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
-  font-size: 0.85rem;
-  opacity: 0.85;
-  text-align: center;
 }
 
 /* Cart FAB */
@@ -1102,7 +1115,7 @@ textarea {
 
   .split,
   .forms-grid,
-  .footer-grid {
+  .site-footer .footer-content {
     grid-template-columns: 1fr;
   }
 

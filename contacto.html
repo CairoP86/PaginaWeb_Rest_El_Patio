@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Contacto y ubicación — Restaurante El Patio. Liberia, Guanacaste. Teléfono, WhatsApp, dirección." />
+    <meta name="keywords" content="contacto, ubicación, teléfono, WhatsApp, dirección, Liberia, Guanacaste" />
+    <meta name="robots" content="index, follow" />
+    <title>Contacto — Restaurante El Patio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=Outfit:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido-principal">Ir al contenido</a>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="index.html">
+          <img src="images/patio/logo1.png" alt="Logotipo Restaurante El Patio" width="59" height="59" />
+          <span class="brand-text">
+            <small>Restaurante</small>
+            <strong>El Patio</strong>
+          </span>
+        </a>
+        <button
+          class="nav-toggle"
+          type="button"
+          id="nav-toggle"
+          aria-expanded="false"
+          aria-controls="main-nav"
+          aria-label="Abrir menú"
+        >
+          <span class="nav-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+        </button>
+        <nav class="nav" id="main-nav" aria-label="Principal">
+          <ul class="nav-list">
+            <li class="nav-item-desktop"><a href="index.html" id="nav-inicio">Inicio</a></li>
+            <li class="nav-item-desktop"><a href="index.html#servicios" id="nav-servicios">Servicios</a></li>
+            <li><a href="menu.html" id="nav-menu">Menú</a></li>
+            <li class="nav-item-desktop"><a href="galeria.html" id="nav-galeria">Galería</a></li>
+            <li><a href="reservas.html" id="nav-reservas">Reservas</a></li>
+            <li class="nav-item-desktop"><a href="menu.html#pedido" id="nav-pedido">Pedido en línea</a></li>
+            <li><a href="contacto.html" id="nav-contacto">Contacto</a></li>
+          </ul>
+          <div class="lang-selector-mobile">
+            <button id="lang-es-mobile" class="lang-btn active" data-lang="es">ES</button>
+            <button id="lang-en-mobile" class="lang-btn" data-lang="en">EN</button>
+          </div>
+        </nav>
+        <div class="lang-selector">
+          <button id="lang-es" class="lang-btn active" data-lang="es">ES</button>
+          <button id="lang-en" class="lang-btn" data-lang="en">EN</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="quick-action-bar" aria-label="Botones rápidos para móvil">
+      <a class="btn btn-primary quick-action" href="menu.html">Menú</a>
+      <a class="btn btn-primary quick-action" href="reservas.html">Reservar</a>
+      <a class="btn btn-primary quick-action" href="contacto.html">Contacto</a>
+    </div>
+
+    <main id="contenido-principal">
+      <section class="section" id="contacto" aria-labelledby="contacto-title">
+        <div class="container split">
+          <div>
+            <h1 id="contacto-title">Contacto y ubicación</h1>
+            <p id="contacto-direccion">
+              <strong>Dirección:</strong><br />
+              200 m norte de la Ermita de la Agonía, Provincia de Guanacaste, Liberia.
+            </p>
+            <p id="contacto-telefono">
+              <strong>Teléfono:</strong>
+              <a href="tel:+50640346245">4034 6245</a><br />
+              <strong>WhatsApp:</strong>
+              <a href="https://wa.me/50683180049" rel="noopener noreferrer">8318 0049</a>
+            </p>
+            <p id="contacto-horario">
+              <strong>Horario:</strong> Abierto a las 11:30 a.m · cierra a las 9:00 p.m.<br />
+              Cierra los domingos.
+            </p>
+            <p>
+              <a
+                class="btn btn-primary"
+                href="https://www.google.com/maps/search/?api=1&query=Restaurante+El+Patio+Liberia+Guanacaste"
+                rel="noopener noreferrer"
+                id="contacto-btn-mapa"
+              >
+                Abrir en Google Maps
+              </a>
+            </p>
+          </div>
+          <div>
+            <iframe
+              title="Ubicación de Restaurante El Patio en Liberia, Guanacaste"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.7749873461523!2d-85.43925!3d10.63897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f71d07d9b8d9b8d%3A0x8f71d07d9b8d9b8d!2sRestaurante%20El%20Patio!5e0!3m2!1ses!2scr!4v1234567890"
+              width="100%"
+              height="400"
+              style="border: 0; border-radius: var(--radius)"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-content">
+          <div>
+            <strong id="footer-hours-title">Horario</strong>
+            <p id="footer-hours">11:30 a.m. a 9:00 p.m. · Cierra domingos</p>
+          </div>
+          <div>
+            <strong id="footer-contact-title">Contacto</strong>
+            <p>
+              <a href="tel:+50640346245">4034 6245</a><br />
+              <a href="https://wa.me/50683180049" rel="noopener noreferrer">WhatsApp: 8318 0049</a>
+            </p>
+          </div>
+          <div>
+            <strong id="footer-location-title">Ubicación</strong>
+            <p id="footer-location">200 m norte de la Ermita de la Agonía, Liberia, Guanacaste</p>
+          </div>
+          <div>
+            <strong id="footer-follow-title">Síguenos</strong>
+            <p>
+              <a href="https://www.facebook.com/restauranteelpatioliberia" rel="noopener noreferrer">Facebook</a><br />
+              <a href="https://www.instagram.com/el_patio_liberia" rel="noopener noreferrer">Instagram</a>
+            </p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p id="footer-copyright">&copy; 2026 Restaurante El Patio. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
+
+    <button type="button" class="cart-fab" id="cart-fab" aria-label="Abrir carrito de pedido">
+      Pedido <span class="count" id="cart-count">0</span>
+    </button>
+
+    <div class="modal-backdrop" id="cart-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="cart-title">
+      <div class="modal">
+        <h2 id="cart-title">Tu pedido</h2>
+        <div id="cart-lines"></div>
+        <div class="cart-total"><span id="cart-total-text">Total estimado:</span> <span id="cart-total-amount">₡0</span></div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-primary" id="whatsapp-order">Enviar pedido por WhatsApp</button>
+          <button type="button" class="btn btn-ghost" id="cart-btn-cerrar">Cerrar</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/translations.js"></script>
+    <script src="js/menu-data.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

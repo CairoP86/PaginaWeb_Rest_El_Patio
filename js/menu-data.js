@@ -1,6 +1,7 @@
 /**
  * Menú Restaurante El Patio — precios en colones (₡)
  */
+console.log("✅ menu-data.js cargado");
 window.MENU_DATA = [
   {
     id: "entradas",

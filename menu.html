@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Menú de Restaurante El Patio — Comida tradicional costarricense, cortes de carne y opciones rápidas. Ordena en línea." />
+    <meta name="keywords" content="menú, restaurante, Liberia, comida costarricense, cortes de carne, pedido en línea" />
+    <meta name="robots" content="index, follow" />
+    <title>Menú — Restaurante El Patio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=Outfit:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido-principal">Ir al contenido</a>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="index.html">
+          <img src="images/patio/logo1.png" alt="Logotipo Restaurante El Patio" width="59" height="59" />
+          <span class="brand-text">
+            <small>Restaurante</small>
+            <strong>El Patio</strong>
+          </span>
+        </a>
+        <button
+          class="nav-toggle"
+          type="button"
+          id="nav-toggle"
+          aria-expanded="false"
+          aria-controls="main-nav"
+          aria-label="Abrir menú"
+        >
+          <span class="nav-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+        </button>
+        <nav class="nav" id="main-nav" aria-label="Principal">
+          <ul class="nav-list">
+            <li class="nav-item-desktop"><a href="index.html" id="nav-inicio">Inicio</a></li>
+            <li class="nav-item-desktop"><a href="index.html#servicios" id="nav-servicios">Servicios</a></li>
+            <li><a href="menu.html" id="nav-menu">Menú</a></li>
+            <li class="nav-item-desktop"><a href="galeria.html" id="nav-galeria">Galería</a></li>
+            <li><a href="reservas.html" id="nav-reservas">Reservas</a></li>
+            <li class="nav-item-desktop"><a href="menu.html#pedido" id="nav-pedido">Pedido en línea</a></li>
+            <li><a href="contacto.html" id="nav-contacto">Contacto</a></li>
+          </ul>
+          <div class="lang-selector-mobile">
+            <button id="lang-es-mobile" class="lang-btn active" data-lang="es">ES</button>
+            <button id="lang-en-mobile" class="lang-btn" data-lang="en">EN</button>
+          </div>
+        </nav>
+        <div class="lang-selector">
+          <button id="lang-es" class="lang-btn active" data-lang="es">ES</button>
+          <button id="lang-en" class="lang-btn" data-lang="en">EN</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="quick-action-bar" aria-label="Botones rápidos para móvil">
+      <a class="btn btn-primary quick-action" href="menu.html">Menú</a>
+      <a class="btn btn-primary quick-action" href="reservas.html">Reservar</a>
+      <a class="btn btn-primary quick-action" href="contacto.html">Contacto</a>
+    </div>
+
+    <main id="contenido-principal">
+      <section class="section section-alt" id="menu" aria-labelledby="menu-title">
+        <div class="container">
+          <div class="section-head">
+            <h1 id="menu-title">Menú</h1>
+            <p id="menu-note">
+              Precios referenciales. <em>Los precios no incluyen el 10% de servicio.</em> Empaque para llevar: ₡300.
+              Consulta postres del día en el local.
+            </p>
+          </div>
+          <div class="menu-filters" id="menu-filters"></div>
+          <div id="menu-root"></div>
+        </div>
+      </section>
+
+      <section class="section" id="pedido" aria-labelledby="pedido-title">
+        <div class="container">
+          <div class="section-head">
+            <h2 id="pedido-title">Pedido en línea</h2>
+            <p id="pedido-desc">
+              Arma tu pedido desde esta página con el botón «Agregar al pedido». Revisa el
+              carrito flotante, ajusta cantidades y envía el pedido por WhatsApp al
+              <a href="https://wa.me/50683180049" rel="noopener noreferrer">8318 0049</a>. Para llamadas:
+              <a href="tel:+50640346245">4034 6245</a>. Puedes combinarlo con
+              <strong>servicio a domicilio</strong> coordinando por el mismo canal.
+            </p>
+          </div>
+          <div class="card" style="max-width: 640px; margin-inline: auto; text-align: center">
+            <h3 style="margin-top: 0" id="pedido-how-title">¿Cómo funciona?</h3>
+            <ol style="text-align: left; max-width: 42ch; margin-inline: auto" id="pedido-steps">
+              <li id="pedido-step1">Elige platos en el menú y agrégalos al carrito.</li>
+              <li id="pedido-step2">Abre el carrito (botón inferior derecho).</li>
+              <li id="pedido-step3">Envía el resumen por WhatsApp para confirmar disponibilidad y total.</li>
+            </ol>
+            <p style="margin-bottom: 0; font-size: 0.95rem; color: var(--gray-600)" id="pedido-note">
+              El carrito guarda en este dispositivo hasta que envíes o vacíes el pedido.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-content">
+          <div>
+            <strong id="footer-hours-title">Horario</strong>
+            <p id="footer-hours">11:30 a.m. a 9:00 p.m. · Cierra domingos</p>
+          </div>
+          <div>
+            <strong id="footer-contact-title">Contacto</strong>
+            <p>
+              <a href="tel:+50640346245">4034 6245</a><br />
+              <a href="https://wa.me/50683180049" rel="noopener noreferrer">WhatsApp: 8318 0049</a>
+            </p>
+          </div>
+          <div>
+            <strong id="footer-location-title">Ubicación</strong>
+            <p id="footer-location">200 m norte de la Ermita de la Agonía, Liberia, Guanacaste</p>
+          </div>
+          <div>
+            <strong id="footer-follow-title">Síguenos</strong>
+            <p>
+              <a href="https://www.facebook.com/restauranteelpatioliberia" rel="noopener noreferrer">Facebook</a><br />
+              <a href="https://www.instagram.com/el_patio_liberia" rel="noopener noreferrer">Instagram</a>
+            </p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p id="footer-copyright">&copy; 2026 Restaurante El Patio. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
+
+    <button type="button" class="cart-fab" id="cart-fab" aria-label="Abrir carrito de pedido">
+      Pedido <span class="count" id="cart-count">0</span>
+    </button>
+
+    <div
+      class="lightbox-backdrop"
+      id="lightbox"
+      role="dialog"
+      aria-modal="true"
+      aria-hidden="true"
+      aria-label="Vista ampliada de la foto"
+      hidden
+    >
+      <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Cerrar galería">Cerrar</button>
+      <img class="lightbox-img" id="lightbox-img" src="" alt="" />
+    </div>
+
+    <div class="modal-backdrop" id="cart-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="cart-title">
+      <div class="modal">
+        <h2 id="cart-title">Tu pedido</h2>
+        <div id="cart-lines"></div>
+        <div class="cart-total"><span id="cart-total-text">Total estimado:</span> <span id="cart-total-amount">₡0</span></div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-primary" id="whatsapp-order">Enviar pedido por WhatsApp</button>
+          <button type="button" class="btn btn-ghost" id="cart-btn-cerrar">Cerrar</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/translations.js"></script>
+    <script src="js/menu-data.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
